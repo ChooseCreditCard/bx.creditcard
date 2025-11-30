@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>bx.Creditcard – How Crypto Credit-Card Payments Work</title>
-  <meta name="description" content="Understand how crypto-linked credit cards work: on-ramp/off-ramp, conversion, fees, rewards and risks. Independent overview of crypto card payments." />
+  <title>Bx.Creditcard – Back-Office, Routing &amp; Settlement in Card Payments</title>
+  <meta name="description" content="Educational overview of how card transactions move through back-office systems: authorisation, clearing, settlement, fees and reconciliation. Focus on the invisible BX layer behind everyday credit-card payments." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://bx.creditcard/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="bx.Creditcard – Crypto Credit-Card Payments Explained" />
-  <meta property="og:description" content="Learn how crypto credit cards convert your coins to fiat at the point of sale, what fees apply and how rewards are calculated." />
+  <meta property="og:title" content="Bx.Creditcard – Back-Office &amp; Settlement Flows Explained" />
+  <meta property="og:description" content="Learn how credit-card transactions flow from the terminal through acquirers, networks and issuers into back-office (BX) systems for clearing, settlement and reconciliation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bx.creditcard/" />
   <meta property="og:image" content="https://choose.creditcard/preview.png?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=og_image" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="bx.Creditcard – Crypto Credit-Card Payments Explained" />
-  <meta name="twitter:description" content="Independent explanation of crypto-linked credit cards, conversion paths, fees and tax considerations." />
+  <meta name="twitter:title" content="Bx.Creditcard – Back-Office &amp; Settlement Flows Explained" />
+  <meta name="twitter:description" content="Neutral explainer of the back-office (BX) side of card payments: batching, fees, settlement cycles and reporting." />
   <meta name="twitter:image" content="https://choose.creditcard/preview.png?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=twitter_image" />
 
   <!-- GA4 -->
@@ -34,7 +34,7 @@
   <!-- Tailwind for utility classes -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Your shared minisite styles -->
+  <!-- Shared minisite styles -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body class="bg-slate-950 text-slate-100">
@@ -43,14 +43,14 @@
       <div class="brand">
         <div class="cc-logo">CC</div>
         <div class="brand-text">
-          <div class="brand-title">bx.Creditcard</div>
-          <div class="brand-subtitle">Crypto Credit-Card Payments Explained</div>
+          <div class="brand-title">Bx.Creditcard</div>
+          <div class="brand-subtitle">Back-Office &amp; Settlement Flows</div>
         </div>
       </div>
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#overview">Overview</a>
-        <a href="#mechanics">How It Works</a>
-        <a href="#compare">Compare</a>
+        <a href="#lifecycle">Transaction lifecycle</a>
+        <a href="#fees">Fees &amp; reporting</a>
       </nav>
     </div>
   </header>
@@ -60,156 +60,194 @@
     <div class="cc-breadcrumb">
       <a href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=breadcrumb">Home</a>
       &nbsp;›&nbsp;
-      bx.Creditcard
+      Bx.Creditcard
     </div>
 
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
-        <h1>How Crypto Credit-Card Payments Actually Work</h1>
+        <h1>The Back-Office Side of Credit-Card Payments</h1>
         <p class="hero-lead">
-          Crypto credit cards promise “spend your coins anywhere”. Here’s what really happens when you tap at the terminal — from conversion and spreads to rewards and tax questions.
+          When you tap or insert your card, the visible part of the payment is over in seconds. Behind the
+          scenes, back-office (BX) systems handle authorisation data, clearing files, settlement, fees and
+          reconciliation. This page walks through that invisible layer.
         </p>
-        <a class="cta" href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=hero_cta">
-          Compare crypto-friendly credit cards
-        </a>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <a class="cta" href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=hero_choose">
+            Compare cards at Choose.Creditcard
+          </a>
+          <a class="cta-secondary" href="https://choose.creditcard/technology/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=hero_technology">
+            Explore Technology &amp; Payments hub
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Content sections -->
+    <!-- Overview -->
     <section id="overview" class="section">
-      <h2>What is a Crypto Credit Card?</h2>
-      <p>A crypto credit card looks and behaves like a normal Visa, Mastercard or similar, but is connected to a crypto wallet or exchange account. At the point of sale, your crypto is converted to fiat currency, which is used to settle the transaction with the card network.</p>
-      <p>Most products are not truly “on-chain at checkout”. Instead, the issuer or partner exchange sells a small amount of your crypto in real time or in batched lots, then uses fiat rails for settlement.</p>
+      <h2>What Do We Mean by “BX” in Card Payments?</h2>
+      <p>
+        In many banks and payment providers, the shorthand “BX” or back-office refers to systems that sit
+        behind the real-time authorisation layer. These platforms handle the life of a transaction once it
+        has been approved: batching into clearing files, applying fees, accounting entries and ultimately
+        paying money out to merchants and collecting from cardholders.
+      </p>
+      <p>
+        While consumers mostly interact with the front-end – the card, the app, the terminal – the BX layer
+        determines how quickly merchants are funded, how disputes are processed and how accurately fees and
+        interest are calculated.
+      </p>
+      <ul class="list-disc space-y-2 pl-5 mt-3">
+        <li><strong>Authorisation data</strong> is captured and stored for later matching.</li>
+        <li><strong>Clearing messages</strong> turn a one-line approval into a settled transaction.</li>
+        <li><strong>Posting engines</strong> update cardholder and merchant accounts.</li>
+      </ul>
     </section>
 
-    <section id="mechanics" class="section">
-      <h2>How CryptoPay Transactions Flow</h2>
-      <p>When you tap or insert the card, the terminal sends a standard authorization request. Behind the scenes, the issuer or partner platform checks your crypto balance, reserves funds, converts to fiat and approves or declines the transaction.</p>
-      <p>Conversion may use a spot-rate at the time of purchase, plus a spread and possible extra fees. Some products convert proactively (preload), while others convert “just in time” for each transaction.</p>
-    </section>
+    <!-- Transaction lifecycle -->
+    <section id="lifecycle" class="section">
+      <h2>The Lifecycle of a Card Transaction in BX Systems</h2>
+      <p>
+        A typical card transaction passes through several stages after the initial “approved” message on the
+        terminal. Each step may happen at different times and sometimes even on different days, depending on
+        cut-off times and batch windows.
+      </p>
 
-    <section class="section">
-      <h2>Fees, Spreads and Hidden Costs</h2>
-      <p>Crypto cards can include exchange spreads, FX margins, network fees and issuer fees. Many marketing pages highlight rewards but downplay spreads on conversion, which can easily exceed 2–3% depending on liquidity and volatility.</p>
-      <p>Always read the fee schedule: look for explicit crypto-conversion fees, FX fees for foreign transactions, ATM withdrawal fees and any additional service charges from the linked exchange.</p>
-    </section>
-
-    <section class="section">
-      <h2>Rewards, Cashbacks and Token Incentives</h2>
-      <p>Rewards may be paid as cash, points or native platform tokens. Some issuers offer higher rates when you stake a token or hold a minimum balance, but this concentrates risk in a single ecosystem.</p>
-      <p>Compare rewards after fees: a 3% token reward is less attractive if you are losing 2–3% on spreads and FX every time you use the card.</p>
-    </section>
-
-    <section class="section">
-      <h2>Risk, Volatility and Tax Considerations</h2>
-      <p>Every time you convert crypto to fiat you may trigger a taxable event in your jurisdiction. That means daily spending could generate a large number of small taxable disposals.</p>
-      <p>Volatility can also work against you. If the market moves sharply between loading and spending, the real purchasing power of your holdings changes — regardless of the headline reward rate.</p>
-    </section>
-
-    <!-- Comparison block -->
-    <section id="compare" class="section">
-      <h2>Compare Crypto Credit-Card Features</h2>
-      <div class="table-wrap">
+      <div class="table-wrap mt-4">
         <table class="table">
           <thead>
             <tr>
-              <th>Feature</th>
-              <th>What to Look For</th>
+              <th>Stage</th>
+              <th>What Happens</th>
               <th>Why It Matters</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Conversion Model</td>
-              <td>Real-time vs. preloaded, clear explanation</td>
-              <td>Determines when spreads and rates are locked in.</td>
+              <td>Authorisation</td>
+              <td>Issuer reserves funds and returns an approval code.</td>
+              <td>Affects available balance and risk limits in real time.</td>
             </tr>
             <tr>
-              <td>Fees &amp; Spreads</td>
-              <td>Transparent published schedule, no hidden surcharges</td>
-              <td>Small spreads can eat most of the advertised rewards.</td>
+              <td>Clearing</td>
+              <td>Merchant’s acquirer submits clearing files through the network.</td>
+              <td>Turns reserved amounts into actual transactions to be posted.</td>
             </tr>
             <tr>
-              <td>Rewards Structure</td>
-              <td>Cash vs. points vs. tokens, caps and tiers</td>
-              <td>Impacts the real value of each transaction you make.</td>
+              <td>Settlement</td>
+              <td>Net amounts are calculated between issuers, acquirers and networks.</td>
+              <td>Determines when merchants get paid and when issuers owe funds.</td>
             </tr>
             <tr>
-              <td>Supported Assets</td>
-              <td>Range of coins, stablecoins, and limits per asset</td>
-              <td>More choice can mean better stability and flexibility.</td>
-            </tr>
-            <tr>
-              <td>Compliance &amp; Reporting</td>
-              <td>Statements, tax reports, export options</td>
-              <td>Helps you document conversions and manage obligations.</td>
+              <td>Posting</td>
+              <td>Transactions hit the cardholder’s account or statement.</td>
+              <td>Drives interest calculations, minimum payments and limits.</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="small">
-        For live product-by-product comparisons, visit
-        <a href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=comparison_section">
-          Choose.Creditcard
-        </a>.
+
+      <p class="small mt-3">
+        Delays or errors in these steps can show up as late postings, duplicate charges or temporary holds
+        on a cardholder’s available balance.
+      </p>
+    </section>
+
+    <!-- Fees & reporting -->
+    <section id="fees" class="section">
+      <h2>Fees, Interchange &amp; Reporting in the BX Layer</h2>
+      <p>
+        The back-office layer is also where the economics of card payments are applied. Interchange fees,
+        scheme fees, acquirer margins and other charges are calculated and booked here, often based on
+        information that comes from BIN data, merchant category codes and transaction geography.
+      </p>
+      <p>
+        For merchants and issuers, BX systems produce the reports that show:
+      </p>
+      <ul class="list-disc space-y-2 pl-5 mt-3">
+        <li><strong>Settlement summaries</strong> – how much will be paid out or collected on a given day.</li>
+        <li><strong>Fee breakdowns</strong> – what portion of a transaction went to interchange, schemes and acquirers.</li>
+        <li><strong>Chargebacks &amp; disputes</strong> – adjustments after the initial settlement.</li>
+      </ul>
+      <p class="mt-3">
+        Well-designed BX setups give transparent, reconcilable views of all these flows. Poorly configured
+        systems create reconciliation headaches and make it hard to understand real payment costs.
+      </p>
+    </section>
+
+    <!-- BX & modern products -->
+    <section class="section">
+      <h2>BX Systems and Modern Card Products</h2>
+      <p>
+        As cards have evolved into digital-first products with virtual numbers, crypto links, instalments and
+        flexible rewards, the back-office has had to adapt. New features often require new posting rules,
+        additional ledger entries or separate product hierarchies, all implemented in BX platforms.
+      </p>
+      <p>
+        Examples include:
+      </p>
+      <ul class="list-disc space-y-2 pl-5 mt-3">
+        <li><strong>Installment plans</strong> created from a single purchase transaction.</li>
+        <li><strong>Split postings</strong> where part of a transaction is treated as a fee, part as spend.</li>
+        <li><strong>Real-time statements</strong> in apps that still reconcile against an end-of-day ledger.</li>
+      </ul>
+      <p class="small mt-3">
+        From the outside, this may look like a simple toggle in an app. Internally, it can mean substantial
+        BX configuration and testing work.
       </p>
     </section>
 
     <!-- Cluster links -->
     <section class="section">
-      <h2>Explore Related Payment Technologies</h2>
+      <h2>Explore Related Card-Technology Minisites</h2>
       <div class="cluster-grid">
-        <a class="cluster-card" href="https://bitcoinpay.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_bitcoinpay">
-          <h3>BitcoinPay.Creditcard</h3>
-          <p>Bitcoin card payments and settlement patterns.</p>
+        <a class="cluster-card" href="https://fin.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_fin">
+          <h3>Fin.Creditcard</h3>
+          <p>High-level view of virtual cards, tap-to-pay and advanced payment tech.</p>
         </a>
-        <a class="cluster-card" href="https://btcpay.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_btcpay">
-          <h3>BTCPay.Creditcard</h3>
-          <p>Merchant-side BTC processing and gateways.</p>
+        <a class="cluster-card" href="https://fx.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_fx">
+          <h3>Fx.Creditcard</h3>
+          <p>How FX fees and currency conversion interact with settlement flows.</p>
         </a>
-        <a class="cluster-card" href="https://tokens.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_tokens">
-          <h3>Tokens.Creditcard</h3>
-          <p>Tokenized rewards, governance tokens and incentives.</p>
+        <a class="cluster-card" href="https://bin.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_bin">
+          <h3>Bin.Creditcard</h3>
+          <p>BIN ranges and how they drive routing, pricing and risk rules.</p>
         </a>
-        <a class="cluster-card" href="https://defipay.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_defipay">
-          <h3>DefiPay.Creditcard</h3>
-          <p>DeFi-linked card products and yield routing.</p>
-        </a>
-        <a class="cluster-card" href="https://virtualpay.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_virtualpay">
-          <h3>VirtualPay.Creditcard</h3>
-          <p>Virtual cards and wallet-based payment flows.</p>
+        <a class="cluster-card" href="https://network.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=cluster_network">
+          <h3>Network.Creditcard</h3>
+          <p>Roles of card networks in moving authorisations and clearing files.</p>
         </a>
       </div>
     </section>
 
-    <!-- Collection section -->
+    <!-- Collection / Hub snippet -->
     <section class="section">
       <h2>Part of The CreditCard Collection</h2>
       <p class="small">
-        bx.Creditcard is one spoke in <strong>The CreditCard Collection</strong> — a network of focused microsites operated by ronarn AS. Each site explains a single payment concept in clear language and then connects you to independent comparison tools.
+        Bx.Creditcard is part of <strong>The CreditCard Collection</strong> — a network of neutral,
+        documentation-focused minisites by ronarn AS. Each site covers one slice of the card ecosystem and
+        connects back to the central comparison hub.
       </p>
       <p class="small">
-        We do not issue cards. We summarize documentation, highlight trade-offs and link to external providers where you can read the full terms yourself.
-      </p>
-      <p class="small">
-        This site is informational only and does not provide financial, investment or tax advice. Always review official documentation and consider seeking independent advice if needed.
+        This page is <strong>informational only</strong>. It does not provide financial, legal or accounting
+        advice, and it does not replace scheme rules or official issuer documentation.
       </p>
 
-      <!-- Root hub snippet -->
-      <div class="hub-link">
+      <div class="hub-link mt-4">
         <a href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=minisite_to_hub"
-           class="text-sm text-slate-600 hover:text-slate-900">
-          Learn more at the Choose.Creditcard
+           class="text-sm text-slate-300 hover:text-slate-50">
+          Compare products and hubs at Choose.Creditcard
         </a>
       </div>
     </section>
 
     <!-- Bottom CTA -->
     <section class="section">
-      <h2>Ready to Compare Crypto-Friendly Cards?</h2>
+      <h2>Want to See How This Impacts Real Cards?</h2>
       <p class="small">
-        Use bx.Creditcard to understand the mechanics — then head over to the main comparison hub to see which cards currently support crypto, stablecoins or on-ramp/off-ramp integrations.
+        Use Bx.Creditcard to understand the moving parts behind settlement and reporting. When you are ready
+        to look at real-world card offers, use the main Choose.Creditcard hub and its sub-hubs to see how
+        different products layer fees, features and technology on top of the same underlying plumbing.
       </p>
       <a class="cta" href="https://choose.creditcard/?utm_source=bx.creditcard&utm_medium=referral&utm_campaign=bottom_cta">
         Go to Choose.Creditcard
